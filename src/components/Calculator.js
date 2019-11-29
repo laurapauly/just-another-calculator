@@ -19,12 +19,39 @@ export default function Calculator() {
   const [secondNum, setSecondNum] = React.useState("");
   const [nextHasBeenPressed, setNextHasBeenPressed] = React.useState(false);
 
+  console.log(firstNum);
+  console.log(secondNum);
+  console.log(nextHasBeenPressed);
+
   function handleNumKeyPress(value) {
     console.log(value + "has been pressed");
+    if (!nextHasBeenPressed) {
+      setFirstNum(firstNum + value);
+    } else {
+      setSecondNum(secondNum + value);
+    }
   }
 
   function handleActionKeyPress(key) {
-    console.log(key);
+    switch (key) {
+      case "next":
+        setNextHasBeenPressed(true);
+        break;
+      case "+":
+        console.log(key);
+        break;
+      case "-":
+        console.log(key);
+        break;
+      case "x":
+        console.log(key);
+        break;
+      case "/":
+        console.log(key);
+        break;
+      default:
+        console.log();
+    }
   }
 
   return (
