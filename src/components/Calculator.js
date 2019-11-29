@@ -32,7 +32,7 @@ export default function Calculator() {
       <ActionKey action={"-"} />
       <NumberKey number={0} />
       <ActionKey action={"+"} />
-      <ActionKey action={"="} />
+      <ActionKey action={"next"} />
     </Grid>
   );
 }
