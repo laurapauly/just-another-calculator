@@ -4,6 +4,7 @@ import colors from "../utils/colors";
 import Display from "./Display";
 import ActionKey from "./ActionKey";
 import NumberKey from "./NumberKey";
+import { add, multiply, substract, divide } from "../api/operations";
 
 const Grid = styled.div`
   width: 400px;
@@ -38,16 +39,16 @@ export default function Calculator() {
         setNextHasBeenPressed(true);
         break;
       case "+":
-        console.log(key);
+        console.log(add(firstNum, secondNum));
         break;
       case "-":
-        console.log(key);
+        console.log(substract(firstNum, secondNum));
         break;
       case "x":
-        console.log(key);
+        console.log(multiply(firstNum, secondNum));
         break;
       case "/":
-        console.log(key);
+        console.log(divide(firstNum, secondNum));
         break;
       default:
         console.log();
