@@ -17,10 +17,18 @@ const Key = styled.button`
   }
 `;
 
-export default function NumberKey({ number }) {
+export default function NumberKey({ number, onNumKeyPress }) {
   let span = "";
   if (number === 0) {
     span = "span 3";
   }
-  return <Key span={span}>{number}</Key>;
+
+  function handleClick() {
+    onNumKeyPress(number.toString());
+  }
+  return (
+    <Key span={span} onClick={handleClick}>
+      {number}
+    </Key>
+  );
 }

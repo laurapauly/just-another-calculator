@@ -15,24 +15,36 @@ const Grid = styled.div`
 `;
 
 export default function Calculator() {
+  const [firstNum, setFirstNum] = React.useState("");
+  const [secondNum, setSecondNum] = React.useState("");
+  const [nextHasBeenPressed, setNextHasBeenPressed] = React.useState(false);
+
+  function handleNumKeyPress(value) {
+    console.log(value + "has been pressed");
+  }
+
+  function handleActionKeyPress(key) {
+    console.log(key);
+  }
+
   return (
     <Grid>
       <Display />
-      <NumberKey number={7} />
-      <NumberKey number={8} />
-      <NumberKey number={9} />
-      <ActionKey action={"/"} />
-      <NumberKey number={4} />
-      <NumberKey number={5} />
-      <NumberKey number={6} />
-      <ActionKey action={"x"} />
-      <NumberKey number={1} />
-      <NumberKey number={2} />
-      <NumberKey number={3} />
-      <ActionKey action={"-"} />
-      <NumberKey number={0} />
-      <ActionKey action={"+"} />
-      <ActionKey action={"next"} />
+      <NumberKey number={8} onNumKeyPress={handleNumKeyPress} />
+      <NumberKey number={9} onNumKeyPress={handleNumKeyPress} />
+      <NumberKey number={7} onNumKeyPress={handleNumKeyPress} />
+      <ActionKey action={"/"} onActionKeyPress={handleActionKeyPress} />
+      <NumberKey number={4} onNumKeyPress={handleNumKeyPress} />
+      <NumberKey number={5} onNumKeyPress={handleNumKeyPress} />
+      <NumberKey number={6} onNumKeyPress={handleNumKeyPress} />
+      <ActionKey action={"x"} onActionKeyPress={handleActionKeyPress} />
+      <NumberKey number={1} onNumKeyPress={handleNumKeyPress} />
+      <NumberKey number={2} onNumKeyPress={handleNumKeyPress} />
+      <NumberKey number={3} onNumKeyPress={handleNumKeyPress} />
+      <ActionKey action={"-"} onActionKeyPress={handleActionKeyPress} />
+      <NumberKey number={0} onNumKeyPress={handleNumKeyPress} />
+      <ActionKey action={"+"} onActionKeyPress={handleActionKeyPress} />
+      <ActionKey action={"next"} onActionKeyPress={handleActionKeyPress} />
     </Grid>
   );
 }
